@@ -128,8 +128,8 @@ const AdminDashboard = () => {
           <button onClick={() => { navigate('/admin/reports'); setSidebarOpen(false); }}>
             📈 Panchayat Reports
           </button>
-          <button onClick={() => { navigate('/admin/schemes'); setSidebarOpen(false); }}>
-            🌾 Government Schemes
+          <button onClick={() => { navigate('/admin/Support'); setSidebarOpen(false); }}>
+          Citizen Support
           </button>
           <button onClick={() => { navigate('/admin/meetings'); setSidebarOpen(false); }}>
             📅 Meeting Schedule

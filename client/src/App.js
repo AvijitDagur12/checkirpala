@@ -13,6 +13,7 @@ import ManageProfile from './pages/ManageProfile';
 import AdminLogin from './admin/AdminLogin';
 import AdminDashboard from './admin/AdminDashboard';
 import AdminApplications from './admin/AdminApplications';
+import Support from './admin/Support';
 function App() {
   return (
     <Router>
@@ -55,6 +56,7 @@ function App() {
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/adminapplications" element={<AdminApplications />} />
+        <Route path="/admin/Support" element={<Support />} />
       </Routes>
     </Router>
   );

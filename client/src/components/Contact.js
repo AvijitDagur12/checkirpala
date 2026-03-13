@@ -77,7 +77,7 @@ const Contact = () => {
       setTimeout(() => setResponseMsg(''), 3000);
     }
   };
-
+  
   return (
     <div className="contact-section" id="contact">
       <div className="contact-container">
