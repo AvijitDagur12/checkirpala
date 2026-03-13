@@ -87,7 +87,7 @@ const ApplicationForm = () => {
     }
 
     // Field-specific validation on change
-    let newValue = value;
+    // let newValue = value;
 
     // Phone and mobile validation - only numbers
     if (name === 'phone' || name === 'mobile' || name === 'whatsapp' || name === 'pin' || name === 'aadhar') {

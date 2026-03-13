@@ -23,7 +23,7 @@ const AdminApplications = () => {
       setAdmin(JSON.parse(adminData));
       fetchApplications();
     }
-  }, []);
+  }, [navigate]);
 
   const fetchApplications = async () => {
     try {

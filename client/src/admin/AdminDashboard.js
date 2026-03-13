@@ -38,7 +38,7 @@ const AdminDashboard = () => {
       setAdmin(JSON.parse(adminData));
       fetchDashboardData();
     }
-  }, []);
+  }, [navigate]);
 
   const fetchDashboardData = async () => {
     try {
