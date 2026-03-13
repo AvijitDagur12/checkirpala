@@ -63,7 +63,7 @@ const HeaderNav = () => {
       </div>
 
       <div className="right">
-        <Link to="/Auth">
+        <Link to="/auth">
           <button className="login-btn">Login / Register</button>
         </Link>
       </div>

@@ -54,7 +54,7 @@ function App() {
         <Route path="/manage-profile" element={<ManageProfile />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/AdminApplications" element={<AdminApplications />} />
+        <Route path="/admin/adminapplications" element={<AdminApplications />} />
       </Routes>
     </Router>
   );
