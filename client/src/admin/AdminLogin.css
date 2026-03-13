@@ -1,0 +1,439 @@
+/* AdminLogin.css - Village Panchayat Style */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Container - Warm Village Theme */
+.admin-login-container {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #f8f0e6 0%, #e8d5b5 100%);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  position: relative;
+}
+
+/* Village Pattern Background */
+.admin-login-container::before {
+  content: "🏘️";
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.1;
+  bottom: 20px;
+  left: 20px;
+  transform: rotate(-5deg);
+}
+
+.admin-login-container::after {
+  content: "🌾";
+  position: absolute;
+  font-size: 150px;
+  opacity: 0.1;
+  top: 20px;
+  right: 20px;
+  transform: rotate(10deg);
+}
+
+/* Header with Panchayat Info */
+.panchayat-header {
+  width: 100%;
+  max-width: 500px;
+  background: #2e7d32;
+  padding: 20px 25px;
+  border-radius: 20px 20px 0 0;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 0 #1b5e20;
+}
+
+.panchayat-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 0 #1b5e20;
+}
+
+.panchayat-header p {
+  font-size: 16px;
+  opacity: 0.95;
+  font-weight: 400;
+}
+
+/* Village Leaders Section - Simple Rectangle Style */
+.village-leaders {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 25px;
+  border-left: 6px solid #ff6f00;
+  border-right: 6px solid #ff6f00;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.leaders-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.leader-card {
+  flex: 1;
+  text-align: center;
+  background: #faf5eb;
+  padding: 15px 5px;
+  border: 2px solid #8d6e63;
+}
+
+.leader-img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
+  border: 3px solid #ff6f00;
+  background: #ffe0b2;
+  overflow: hidden;
+}
+
+.leader-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.leader-card h3 {
+  font-size: 14px;
+  color: #3e2723;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.leader-card p {
+  font-size: 11px;
+  color: #ff6f00;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.village-emblem {
+  text-align: center;
+  padding: 0 5px;
+}
+
+.emblem-icon {
+  font-size: 45px;
+  line-height: 1;
+  background: #ff6f00;
+  color: white;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+  border: 3px solid #8d6e63;
+}
+
+.emblem-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1b5e20;
+  letter-spacing: 1px;
+  background: #fff9c4;
+  padding: 5px 8px;
+  border: 2px solid #ff6f00;
+}
+
+/* Login Box - Clean Rectangle Design */
+.admin-login-box {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 35px 30px;
+  border: 3px solid #8d6e63;
+  border-top: none;
+  box-shadow: 0 15px 0 #5d4037;
+}
+
+.admin-login-box h2 {
+  color: #2e7d32;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0 #a5d6a7;
+}
+
+.admin-login-box .subtitle {
+  color: #bf360c;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 3px dotted #ffb74d;
+  text-transform: uppercase;
+}
+
+/* Form Elements - Bold & User Friendly */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 16px 20px;
+  background: #fff9f0;
+  border: 3px solid #8d6e63;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  color: #3e2723;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ff6f00;
+  background: #ffffff;
+  transform: scale(1.02);
+}
+
+.form-group input::placeholder {
+  color: #a1887f;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+/* Error Message */
+.admin-error {
+  background: #ffebee;
+  border: 3px solid #c62828;
+  color: #b71c1c;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 10px solid #c62828;
+}
+
+/* Login Button - Bold Rectangle */
+.admin-login-box button {
+  width: 100%;
+  padding: 18px;
+  background: #2e7d32;
+  border: none;
+  border: 3px solid #1b5e20;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 15px;
+  box-shadow: 0 8px 0 #1b5e20;
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-login-box button:hover:not(:disabled) {
+  background: #1b5e20;
+  transform: translateY(2px);
+  box-shadow: 0 6px 0 #0d4d0d;
+}
+
+.admin-login-box button:active:not(:disabled) {
+  transform: translateY(8px);
+  box-shadow: none;
+}
+
+.admin-login-box button:disabled {
+  background: #9e9e9e;
+  border-color: #757575;
+  box-shadow: 0 8px 0 #616161;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Footer - Demo Credentials */
+.admin-login-footer {
+  margin-top: 25px;
+  background: #fff3e0;
+  padding: 15px;
+  border: 3px solid #ff6f00;
+  border-top: 6px solid #ff6f00;
+}
+
+.admin-login-footer p {
+  color: #3e2723;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  background: #ffffff;
+  padding: 10px;
+  border: 2px dashed #ff6f00;
+}
+
+/* Village Footer */
+.village-footer {
+  width: 100%;
+  max-width: 500px;
+  background: #5d4037;
+  padding: 15px 25px;
+  border-radius: 0 0 20px 20px;
+  color: #ffe0b2;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  border-top: 6px solid #ffb74d;
+}
+
+.village-footer span {
+  color: #ffb74d;
+  margin: 0 10px;
+}
+
+/* Mobile Responsive - Very User Friendly */
+@media (max-width: 600px) {
+  .panchayat-header {
+    padding: 15px 20px;
+  }
+
+  .panchayat-header h1 {
+    font-size: 24px;
+  }
+
+  .panchayat-header p {
+    font-size: 14px;
+  }
+
+  .village-leaders {
+    padding: 15px;
+  }
+
+  .leaders-grid {
+    gap: 8px;
+  }
+
+  .leader-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .leader-card h3 {
+    font-size: 12px;
+  }
+
+  .leader-card p {
+    font-size: 9px;
+  }
+
+  .emblem-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+
+  .emblem-text {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+
+  .admin-login-box {
+    padding: 25px 20px;
+  }
+
+  .admin-login-box h2 {
+    font-size: 28px;
+  }
+
+  .admin-login-box .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .form-group input {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  .admin-login-box button {
+    padding: 16px;
+    font-size: 18px;
+  }
+
+  .admin-login-footer p {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 380px) {
+  .leader-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .leader-card h3 {
+    font-size: 10px;
+  }
+
+  .leader-card p {
+    font-size: 8px;
+  }
+
+  .emblem-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .admin-login-box h2 {
+    font-size: 24px;
+  }
+
+  .form-group input {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Touch-friendly for Mobile */
+@media (hover: none) and (pointer: coarse) {
+  .form-group input,
+  .admin-login-box button {
+    font-size: 16px; /* Prevents zoom on mobile */
+  }
+  
+  .admin-login-box button {
+    padding: 20px;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .admin-login-container {
+    padding: 10px;
+  }
+
+  .leaders-grid {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .admin-login-box {
+    padding: 20px;
+  }
+}

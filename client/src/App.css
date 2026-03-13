@@ -1,0 +1,41 @@
+/* Global fonts & colors */
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Button style */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+/* Navbar dropdowns */
+.navbar li {
+  position: relative;
+}
+
+.navbar li:hover .dropdown {
+  display: block;
+}
+
+/* Dropdown shared style */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0056cc;
+  list-style: none;
+  padding: 0;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown li {
+  padding: 10px 20px;
+  color: white;
+}

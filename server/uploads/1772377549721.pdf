@@ -1,0 +1,329 @@
+Error generating PDF: Cannot access a closed Stream.
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Irhpala Gram Panchayat Portal | Dashboard
+</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        /* --- CORE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+    /* Combined background with image overlay */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1528693404014-b13ebe6e723e?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') 
+        no-repeat center center fixed;
+    /* Background properties */
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    
+
+
+    overflow-x: hidden;
+}
+        /* --- NAVBAR --- */
+        .navbar {
+/*            background: linear-gradient(135deg, #1b5e20, #2e7d32);*/
+             background: linear-gradient(to right, #2E7D32, #2E7D32, #FFC107);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .user-profile { display: flex; align-items: center; gap: 12px; }
+        .profile-img { width: 40px; height: 40px; border-radius: 50%; border: 2px solid #fff; object-fit: cover; }
+
+        /* --- DESKTOP LAYOUT --- */
+        .container {
+            display: flex;
+            margin-top: 65px; /* Navbar height offset */
+        }
+
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #E8F5E9 100%);
+    border-right: 2px solid #C8E6C9;
+            height: calc(100vh - 65px);
+            position: fixed;
+            left: 0;
+            top: 65px;
+            border-right: 1px solid #e0e0e0;
+            padding-top: 20px;
+            z-index: 999;
+        }
+
+        .nav-item {
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #444;
+            text-decoration: none;
+            font-weight: 500;
+            border-left: 4px solid transparent;
+            transition: 0.3s;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: #e8f5e9;
+            border-left: 4px solid #2e7d32;
+            color: #2e7d32;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 260px; /* Leave space for sidebar */
+            padding: 30px;
+            min-height: calc(100vh - 65px);
+        }
+
+        /* --- CONTENT CARDS --- */
+        .welcome-card {
+    color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+/*
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-left: 5px solid #2e7d32;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }*/
+.stat-card {
+     background: rgba(46, 125, 50, 0.85); 
+    padding: 25px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #2e7d32; 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+        .stat-number { font-size: 40px; font-weight: 800; color: lightgrey; }
+        .stat-label { color: white; font-size: 24px; text-transform: uppercase; }
+
+        .btn-primary {
+           background: linear-gradient(to right, #2E7D32, #FFC107, #2E7D32);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        /* --- TABLE STYLES --- */
+        .applications-section {
+            background: white;
+            border: 1px solid #e0e0e0;
+        }
+
+        .section-header {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e8f5e9;
+            font-weight: 700;
+            color: #2e7d32;
+        }
+
+        /* HORIZONTAL SCROLL FIX */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .grid-view {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 850px; /* Ensures scroll triggers on mobile */
+        }
+
+        .grid-view th { background: #f8f9fa; padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6; white-space: nowrap; }
+        .grid-view td { padding: 15px; border-bottom: 1px solid #eee; white-space: nowrap; }
+
+        /* --- MOBILE RESPONSIVE (CRITICAL UPDATES) --- */
+        @media (max-width: 768px) {
+            .navbar { padding: 10px 20px; }
+            .container {
+                flex-direction: column;
+                margin-top: 60px;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                top: 0;
+                left: 0;
+                display: flex;
+                overflow-x: auto; 
+                padding: 0;
+                margin-top: 20px; 
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+                background: #fff;
+            }
+
+            .nav-item {
+                padding: 12px 20px;
+                white-space: nowrap;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+            }
+
+            .nav-item.active {
+                border-bottom: 3px solid #2e7d32;
+                background: #e8f5e9;
+            }
+
+            .main-content {
+                margin-left: 0; 
+                padding: 20px 15px;
+            }
+
+            .grid-view {
+                min-width: 1000px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="./userdashboard" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="GUFeOTj4cz5kuT6Yl+c5R4hbJFw6aZxm3ybU4tPrqqoqPanfQr5oF/3XRo1I6e5cspSNV5tFpFbz0lIE5tcZDnf0zzKwMb9vT8AjJpiGIzpknqECiK2s3IZezpWYHgFdxD6gejWDII28os3eXX9LBjBXeGc+L+xLd6sMvvLMAUCijw9d0bdWzTroQCBV4qq7tRfeUXU9NGcuCnaOOOtFDL8/0JP4vL6xAJ1S2Z6xvY/cIR3Wu6dWprix9cTl4Y6q5e4JRpOHnv5R9hZVMbs+JQRpnKSOnI5KWomgHkx6KdYq4s1R+QAEl9eM0k2Xb4wqweNGPaTO6y8z6f4oGW5a3m3GRpSciSXwRfCYW0sSL22ZsCQMBvjV33L134YUZ95MxqHqahO//W2JvSOSVQvH6QIf2ga3WoqscLlYOidio+KvC69Jw0BzsOIUXJnTj3KqUSA1YREi+STR4CLfWUckdvpD3INnUPgOcd/2/0CBOP4jVTqBL0ZpWX3iiGV8TO+6+cU4LhZke+ORlk7ITnq2LD3SUoYRV4uO/1rf/0KvWYBHZrCDIbFFj0DZizq/pR1FLQC23PDaBaMF61A6AR2RfF5JwrwbD9aRqn42+bVX2OkfhSrDaSf41eQcznXObqKSSUyPeKvZflv1vlZPNTwl3cVgmOP3kPppvwVyzz/Zae8wMNfu34LX5Ac7OkIOAsS8T9r7k6R41orAfxqyla+7cY7NL9Y62s2XKd049zZa7cxgWFY4GLfrJMtNx4P5FRkMdobMvKjYbky4FpizCWFqn/KEjYbs5KdLVfrcBVetgtFAlLUfBVzlQv+i8+JxColmpAhz24LPeZpYdsbA9axGIlsmEorQPHPsAWaTRWVQCoDDuIOxVz+gnaU+FFnbdy6R" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2529833F" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="o+fRS+XXRZyL1aDmvTgVvtCoaHhqpGfyqOS3Mf/ogr8qvFZKtTlvfDzM2zX1tP/t35RGtuCzGai+4dW1RBnJyNNwfVRAPrxEBUa6fHcCGRna+SB8DErb5Mgt/vbz5bt0DpaRhDm8xGbOEgqxKav8GQ==" />
+</div>
+        <nav class="navbar">
+            <div class="logo"><i class="fa-solid fa-landmark"></i>ইরপালা গ্রাম পঞ্চায়েত 1.0</div>
+            <div class="user-profile">
+                <span id="Label1">Welcome ,Megha Samanta</span>
+                <img id="Image1" class="profile-img" src="allimages/Megha%20Samanta.jpg" />
+            </div>
+        </nav>
+
+        <div class="container">
+            <aside class="sidebar">
+                <a href="undermainten" class="nav-item active"><i class="fa-solid fa-chart-line"></i><span>Dashboard</span></a>
+                <a href="undermainten" class="nav-item"><i class="fa-solid fa-gears"></i><span>Services</span></a>
+                <a href="undermainten" class="nav-item"><i class="fa-solid fa-file-lines"></i><span>Applications</span></a>
+                <a href="undermainten" class="nav-item"><i class="fa-solid fa-folder-open"></i><span>Documents</span></a>
+                <a href="undermainten" class="nav-item"><i class="fa-solid fa-user-circle"></i><span>Profile</span></a>
+                <a href="index.aspx" class="nav-item"><i class="fa-solid fa-right-from-bracket"></i><span>Log out</span></a>
+            </aside>
+
+            <main class="main-content">
+                
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number"><span id="lblPendingApps">0</span></div>
+                        <div class="stat-label">Pending</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number"><span id="lblCompletedApps">0</span></div>
+                        <div class="stat-label">Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number"><span id="lblActiveRequests">0</span></div>
+                        <div class="stat-label">Active</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number"><span id="lblTotalPayments">0</span></div>
+                        <div class="stat-label">Rejected</div>
+                    </div>
+                </div>
+
+                <a id="Button1" class="btn-primary" href="javascript:__doPostBack(&#39;Button1&#39;,&#39;&#39;)">
+                    <i class="fa-solid fa-plus"></i> Apply New Certificate
+                </a>
+
+                <div class="applications-section">
+                    <div class="section-header">Your Application History</div>
+                    <div class="table-wrapper">
+                        <div>
+	<table class="grid-view" cellspacing="0" id="GridView1" style="border-collapse:collapse;">
+		<tr>
+			<th scope="col">Certificate Type</th><th scope="col">Submit Date</th><th scope="col">Mobile</th><th scope="col">Status</th><th scope="col">Action</th>
+		</tr><tr>
+			<td>Residential Certificate</td><td>14-01-2026 11:19:06</td><td>8167836670</td><td>
+                                        <span style='color:#2e7d32; font-weight: bold;'>
+                                            Approved
+                                        </span>
+                                    </td><td>
+                                        <input type="submit" name="GridView1$ctl02$btnDownload" value="Download" id="GridView1_btnDownload_0" class="btn-primary" style="padding: 5px 10px; font-size: 12px; margin: 0; background: #2e7d32;" />
+                                    </td>
+		</tr><tr>
+			<td>Income Certificate</td><td>24-01-2026 10:13:12</td><td>8167836670</td><td>
+                                        <span style='color:#d32f2f; font-weight: bold;'>
+                                            Pending
+                                        </span>
+                                    </td><td>
+                                        
+                                    </td>
+		</tr>
+	</table>
+</div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </form>
+</body>
+</html>

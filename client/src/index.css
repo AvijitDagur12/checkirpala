@@ -1,0 +1,222 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* Add Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: #FF9933;
+  color: white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-left: 1px solid #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #FF9933, #138808);
+  border-radius: 0;
+  border: 1px solid #333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #138808, #FF9933);
+}
+
+/* Container for main content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Utility classes */
+.text-saffron { color: #FF9933; }
+.text-green { color: #138808; }
+.text-navy { color: #000080; }
+.bg-light { background-color: #f8f9fa; }
+.bg-white { background-color: #ffffff; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 2px solid #333;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #333;
+  transition: all 0.2s;
+  text-decoration: none;
+  background: white;
+  color: #333;
+}
+
+.btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #333;
+}
+
+.btn-primary {
+  background: #FF9933;
+  color: white;
+  border-color: #000080;
+}
+
+.btn-success {
+  background: #138808;
+  color: white;
+  border-color: #FF9933;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border: 2px solid #333;
+  box-shadow: 5px 5px 0 #333;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+  
+  .btn {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #FF9933;
+  border-right: 3px solid #138808;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Form elements */
+input, select, textarea {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  border: 2px solid #333;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #FF9933;
+  box-shadow: 3px 3px 0 #138808;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #333;
+}
+
+th {
+  background: #FF9933;
+  color: white;
+  padding: 12px;
+  border: 1px solid #333;
+  font-weight: 600;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+/* Links */
+a {
+  color: #000080;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+a:hover {
+  color: #FF9933;
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #000080;
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.25rem; }
+}
